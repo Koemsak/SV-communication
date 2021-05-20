@@ -1,0 +1,55 @@
+body {
+    font-family: sans-serif;
+}
+.container {
+    width: 30%;
+    margin: auto;
+    /* border: 1px solid; */
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 100px;
+    box-shadow: #0000003d 0px 3px 8px;
+    margin-bottom: 100px;
+}
+.head h1 {
+    text-align: center;
+    color: #0f8d82;
+    text-transform: uppercase;
+}
+/* .inputField {
+    margin: 5px;
+} */
+.inputField input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    margin: 8px 0;
+    box-shadow: #00000029 0px 1px 4px;
+}
+#btnLogin {
+    background: #0988dd;
+    color: white;
+    cursor: pointer;
+    box-shadow: #00000059 0px 5px 15px;
+}
+
+#btnSignup {
+    color: white;
+    background: #049929;
+    cursor: pointer;
+    box-shadow: #00000059 0px 5px 15px;
+}
+#btnCreate {
+    color: white;
+    background: #049929;
+    cursor: pointer;
+    box-shadow: #00000059 0px 5px 15px;
+    display: none;
+}
+.inputField p {
+    text-align: center;
+}
+
