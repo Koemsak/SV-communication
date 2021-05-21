@@ -7,6 +7,8 @@
     <title>Project2</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="https://cdn.pixabay.com/photo/2016/11/07/13/04/yoga-1805784__340.png" type="image/x-icon">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div class="container">
@@ -16,10 +18,11 @@
         <div class="inputField">
             <form>
                 <div class="login">
-                    <input type="text" placeholder="Username" id="username"><br>
-                    <input type="password" placeholder="Password" id="password"><br>
+                    <input type="text" placeholder="Username" id="username" ><br>
+                    <input type="password" placeholder="Password" id="password" ><br>
                 </div>
                 <input type="button" value="LOGIN" id="btnLogin"><br>
+                <p id="notCorrectInfo">Incorrect username or password</p>
                 <p>OR</p>
                 <div class="signup">
                     <input type="email" placeholder="E-mail" id="email"><br>
@@ -32,6 +35,52 @@
             </form>
         </div>
     </div>
+    <!-- CHAT CONTAINER -->
+    <div class="body-content">
+        <div class="header">
+            <div class="profile">
+                <img src="https://cdn.pixabay.com/photo/2018/09/07/13/28/rabbit-3660673__340.jpg" alt="Please check your internet...">
+                <h3 class="userName">KOEMSAK MEAN</h3>
+            </div>
+            <div class="left-side">
+                <button id="logout">LOGOUT</button>
+                <button class="fa fa-bell" id="notification"></button>
+            </div>
+        </div>
+        <div class="body-messege">
+            <div class="reciever">
+                <div class="msn">
+                    <span>Vuthy</span>
+                </div>
+                <div class="rms">
+                    <p>Hello !</p>
+                </div>
+                <div class="rms">
+                    <p>How are you today? How was your project? It work or not?</p>
+                </div>
+            </div>
+            <div class="sender">
+                <div class="msn">
+                    <span>Koemsak</span>
+                </div>
+                <div class="rms">
+                    <p>Hi, Vuthy!</p>
+                </div>
+                <div class="rms">
+                    <p>I'm not good because of my project. And it doesn't work when I try to run it.</p>
+                </div>
+                <div class="rms">
+                    <p>How about you?</p>
+                </div>
+            </div>
+        </div>
+        <div class="textMessege">
+            <input type="text" placeholder="Write a messege....">
+            <button id="send" class="fa fa-send"></button>
+        </div>
+    </div>
+    
+
     <script src="js/script.js"></script>
 </body>
 </html>

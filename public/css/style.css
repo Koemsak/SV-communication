@@ -29,6 +29,11 @@ body {
     margin: 8px 0;
     box-shadow: #00000029 0px 1px 4px;
 }
+#notCorrectInfo {
+    color: red;
+    font-size: 12px;
+    display: none;
+}
 #btnLogin {
     background: #0988dd;
     color: white;
@@ -53,3 +58,126 @@ body {
     text-align: center;
 }
 
+/* CHAT APPLICATION */
+
+.body-content {
+    box-shadow: #00000059 0px 5px 15px;
+    /* background: red; */
+    /* border: 1px solid; */
+    width: 50%;
+    margin: auto;
+    border-radius: 5px;
+    display: none;
+}
+
+.header {
+    /* background: blue; */
+    box-shadow: #00000059 0px 5px 15px;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px 5px 0 0;
+}
+.profile {
+    width: 80%;
+    display: flex;
+}
+.profile img {
+    width: 10%;
+    border-radius: 50%;
+}
+.profile .userName {
+    margin-left: 20px;
+}
+.header .left-side {
+    width: 20%;
+}
+.left-side button {
+    padding: 10px;
+}
+.left-side #logout {
+    background: #2578e6;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    box-shadow: #00000059 0px 5px 15px;
+    color: #ffffff;
+    margin-right: 10px;
+}
+.left-side #notification {
+    background: lightblue;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    box-shadow: #00000059 0px 5px 15px;
+    color: #0988dd;
+}
+.body-messege {
+    width: 95%;
+    height: 65vh;
+    padding: 10px;
+    margin: auto;
+}
+.msn {
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: gray;
+    margin-bottom: 10px;
+}
+.reciever .rms p {
+    background: #4c4b4bda;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: -10px;
+    color: white;
+}
+
+.sender .rms p {
+    background: #00806f;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: -10px;
+    color: white;
+}
+
+.reciever {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.sender {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.textMessege {
+    padding: 30px;
+    border-radius: 0 0 5px 5px;
+    box-shadow: #00000033 0px 7px 29px 0px;
+}
+
+.textMessege input {
+    width: 80%;
+    padding: 15px;
+    border-radius: 40px;
+    outline: none;
+    border: none;
+    background: #8075755e;
+}
+
+.textMessege button {
+    width: 13%;
+    padding: 13px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #4848fa;
+    color: white;
+    box-shadow: #00000033 0px 7px 29px 0px;
+
+}
