@@ -1,17 +1,10 @@
 [
     {
-        "email": "vuthy.yib@student.passerellesnumeriques.org",
         "name": "vuthy",
         "password": "1234"
     },
     {
-        "email": "koemsak.mean@student.passerellesnumeriques.org",
-        "name": "Koemsak",
+        "name": "koemsak",
         "password": "1111"
-    },
-    {
-        "email": "lyheang.chem@student.passerellesnumeriques.org",
-        "name": "lyheang",
-        "password": "4444"
     }
 ]

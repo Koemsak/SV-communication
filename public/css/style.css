@@ -16,9 +16,6 @@ body {
     color: #0f8d82;
     text-transform: uppercase;
 }
-/* .inputField {
-    margin: 5px;
-} */
 .inputField input {
     width: 100%;
     box-sizing: border-box;
@@ -41,19 +38,6 @@ body {
     box-shadow: #00000059 0px 5px 15px;
 }
 
-#btnSignup {
-    color: white;
-    background: #049929;
-    cursor: pointer;
-    box-shadow: #00000059 0px 5px 15px;
-}
-#btnCreate {
-    color: white;
-    background: #049929;
-    cursor: pointer;
-    box-shadow: #00000059 0px 5px 15px;
-    display: none;
-}
 .inputField p {
     text-align: center;
 }
@@ -67,7 +51,7 @@ body {
     width: 50%;
     margin: auto;
     border-radius: 5px;
-    display: none;
+    display: block;
 }
 
 .header {
@@ -119,41 +103,57 @@ body {
     height: 65vh;
     padding: 10px;
     margin: auto;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
-.msn {
+/* .user {
     font-size: 12px;
     font-family: Arial, Helvetica, sans-serif;
     color: gray;
     margin-bottom: 10px;
-}
-.reciever .rms p {
+} */
+/* .reciever .receiver_sms_box p {
     background: #4c4b4bda;
     border-radius: 10px;
     padding: 10px;
     margin-top: -10px;
     color: white;
-}
+} */
 
-.sender .rms p {
+/* .sender .sender_sms_box p {
     background: #00806f;
     padding: 10px;
     border-radius: 10px;
     margin-top: -10px;
     color: white;
-}
+} */
 
 .reciever {
     display: flex;
-    flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    width: 100%;
 }
-.sender {
+
+.sender{
+    width: 100%;
     display: flex;
-    flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
 }
+.sender p, .reciever p{
+    padding:10px;
+    border-radius: 10px;
+    color: white;
+}
+.sender p{
+    background-color: teal;
+}
+.reciever p{
+    background-color:  rgb(228, 204, 97);
+}
+
 .textMessege {
     padding: 30px;
     border-radius: 0 0 5px 5px;
