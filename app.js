@@ -1,31 +1,58 @@
-
 const express = require("express");
-const app = express();
-
 const fs = require("fs");
-
-const PORT = 3000;
-app.listen(PORT, (req, res) => console.log("Server is running...."));
+const app = express();
+let PORT = "5000";
+app.listen(PORT, (req, res) => {
+    console.log("Server is running in port: " + PORT);
+})
 
 app.use(express.static("public"));
-
 app.use(express.json());
 app.use(express.urlencoded());
 
 
-// READ FILE
+// GET DATA FROM SIGN UP
 let data = JSON.parse(fs.readFileSync("data.json"));
+app.get("/text", (req, res) => {
+    res.send(data);
+})
 
 
+// LOGIN MESSAGE
 app.post("/login", (req, res) => {
-    let userLogin = req.body;
-    let isValid = false;
-    for (let user of data) {
-        console.log(user)
-        if (user.name == userLogin.name && user.password == userLogin.password) {
-            isValid = true;
+    let info = req.body;
+    let invalid = false;
+    for (user of data) {
+        if (user.firstName === info.name && user.password === info.password) {
+            invalid = true;
         }
-        // console.log(user.password);
     }
-    res.send(isValid);
+    res.send(invalid);
+})
+
+// app.post("/getData", (req, res) => {
+//     let newData = req.body;
+//     data.push(newData);
+//     fs.writeFileSync("data.json", JSON.stringify(data));
+//     res.send(newData);
+// })
+
+
+// MESSAGE CHAT 
+let message = JSON.parse(fs.readFileSync("message.json"));
+
+app.get("/getdata", (req, res) => {
+    res.send(message);
+})
+
+app.post("/add", (req, res) => {
+    let username = req.body.name;
+    let txt = req.body.text;
+    let new_data = {
+        name: username,
+        text: txt
+    }
+    message.push(new_data);
+    fs.writeFileSync("message.json", JSON.stringify(message));
+    res.send(message);
 })
