@@ -82,3 +82,5 @@ send_btn.addEventListener("click", send_data);
 
 
 setInterval(loadMessage, 1000);
+
+chat_box.scrollTop = chat_box.scrollHeight - chat_box.clientHeight;
