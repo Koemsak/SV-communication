@@ -1,8 +1,10 @@
 
 
-const IP = "192.168.88.29";
-const PORT = "5000";
-const URL_REQUEST = "http://" + IP + ":" + PORT;
+// const IP = "192.168.88.29";
+// const PORT = "5000";
+// const URL_REQUEST = "http://" + IP + ":" + PORT;
+
+const URL_REQUEST = "https://sv1communication.herokuapp.com/";
 
 let user_login = localStorage.getItem("username");
 // MESSAGE CHAT
