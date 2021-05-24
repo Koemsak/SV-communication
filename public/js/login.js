@@ -27,7 +27,7 @@ function login() {
                 error_txt.style.display = "block";
             }
         })
-        email.value = "";
+        username.value = "";
         password.value = "";
     }
 }
