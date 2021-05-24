@@ -1,10 +1,8 @@
 const express = require("express");
 const fs = require("fs");
 const app = express();
-let PORT = "5000";
-app.listen(PORT, (req, res) => {
-    console.log("Server is running in port: " + PORT);
-})
+let PORTs = "5000";
+app.listen(process.env.PORT || PORTs)
 
 app.use(express.static("public"));
 app.use(express.json());
@@ -29,13 +27,6 @@ app.post("/login", (req, res) => {
     }
     res.send(invalid);
 })
-
-// app.post("/getData", (req, res) => {
-//     let newData = req.body;
-//     data.push(newData);
-//     fs.writeFileSync("data.json", JSON.stringify(data));
-//     res.send(newData);
-// })
 
 
 // MESSAGE CHAT 
