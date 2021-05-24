@@ -17,10 +17,10 @@ function showMessage(response) {
             chat.remove();
         }
     }
-    username.textContent = user_login.toUpperCase();
+
     let container = document.createElement("div");
     container.className = "container";
-    for (let data of response.data) {
+    for (let data of response) {
         let outgoing = document.createElement("div");
         outgoing.className = "chat outgoing";
         let incoming = document.createElement("div");
@@ -49,10 +49,10 @@ function showMessage(response) {
 }
 
 function loadMessage() {
-    // let container = chat_box.firstElementChild;
-    // container.remove();
-    // showMessage();
-    axios.get("/getdata").then(showMessage);
+    username.textContent = user_login.toUpperCase();
+    axios.get("/getdata").then((response) => {
+        showMessage(response.data);
+    });
 }
 
 function send_data() {
@@ -81,6 +81,5 @@ let send_btn = document.querySelector("#send");
 send_btn.addEventListener("click", send_data);
 
 
-setInterval(loadMessage, 1000);
-
 chat_box.scrollTop = chat_box.scrollHeight - chat_box.clientHeight;
+setInterval(loadMessage, 100);

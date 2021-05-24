@@ -12,24 +12,19 @@ let password = document.querySelector("#password");
 let error_txt = document.querySelector(".error-txt")
 
 function login() {
-    if (username.value !== "" && password !== "") {
-        let getInfo = {
-            name: username.value,
-            password: password.value
-        }
-        axios.post(URL_REQUEST + "/login", getInfo).then((response) => {
-            if (response.data) {
-                localStorage.setItem("username", username.value);
-                localStorage.setItem("password", password.value);
-                window.location.href = "../message.html";
-                error_txt.style.display = "none";
-            } else {
-                error_txt.style.display = "block";
-            }
-        })
-        username.value = "";
-        password.value = "";
+    let getInfo = {
+        name: username.value,
+        password: password.value
     }
+    axios.post(URL_REQUEST + "/login", getInfo).then((response) => {
+        if (response.data) {
+            localStorage.setItem("username", username.value);
+            window.location.href = "../message.html";
+            error_txt.style.display = "none";
+        } else {
+            error_txt.style.display = "block";
+        }
+    })
 }
 let loginBtn = document.querySelector("#login");
 loginBtn.addEventListener("click", login);

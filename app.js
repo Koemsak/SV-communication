@@ -11,21 +11,22 @@ app.use(express.urlencoded());
 
 // GET DATA FROM SIGN UP
 let data = JSON.parse(fs.readFileSync("data.json"));
-app.get("/text", (req, res) => {
-    res.send(data);
-})
+// app.get("/text", (req, res) => {
+//     res.send(data);
+// })
 
 
 // LOGIN MESSAGE
 app.post("/login", (req, res) => {
     let info = req.body;
     let invalid = false;
-    for (user of data) {
+    for (let user of data) {
         if (user.firstName === info.name && user.password === info.password) {
             invalid = true;
         }
     }
     res.send(invalid);
+    console.log(invalid);
 })
 
 
