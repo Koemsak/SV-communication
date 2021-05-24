@@ -76,6 +76,5 @@ let input_message = document.querySelector("#txtMess");
 let send_btn = document.querySelector("#send");
 send_btn.addEventListener("click", send_data);
 
-loadMessage();
 
-setInterval(loadMessage, 1500);
+setInterval(loadMessage, 1000);
