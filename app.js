@@ -2,32 +2,52 @@ const express = require("express");
 const fs = require("fs");
 const app = express();
 let PORTs = "5000";
-app.listen(process.env.PORT || PORTs)
+app.listen(process.env.PORT || PORTs);
 
 app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded());
 
 
-// GET DATA FROM SIGN UP
+
 let data = JSON.parse(fs.readFileSync("data.json"));
-// app.get("/text", (req, res) => {
-//     res.send(data);
-// })
+
+
+// GET DATA TO LOAD DATA AUTO
+app.get("/user/auto/login", (req, res) => {
+    res.send(data);
+})
 
 
 // LOGIN MESSAGE
 app.post("/login", (req, res) => {
     let info = req.body;
     let invalid = false;
-    for (let user of data) {
+    for (user of data) {
         if (user.firstName === info.name && user.password === info.password) {
             invalid = true;
         }
     }
     res.send(invalid);
-    console.log(invalid);
 })
+
+ 
+// SIGN UP TO ADD NEW USER 
+app.post("/getData", (req, res) => {
+    let newData = req.body;
+    let status = false;
+    for (let user of data) {
+        if (user.email === newData.email) {
+            status = true;
+        }
+    };
+    if (!status) {
+        data.push(newData);
+        fs.writeFileSync("data.json", JSON.stringify(data));
+    }
+    res.send(status);
+    console.log(status);
+});
 
 
 // MESSAGE CHAT 
@@ -42,7 +62,9 @@ app.post("/add", (req, res) => {
     let txt = req.body.text;
     let new_data = {
         name: username,
-        text: txt
+        text: txt,
+        bold: req.body.bold,
+        italic: req.body.italic
     }
     message.push(new_data);
     fs.writeFileSync("message.json", JSON.stringify(message));

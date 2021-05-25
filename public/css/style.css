@@ -280,9 +280,26 @@ form .name-details .field:last-child {
     width: 55px;
     border: none;
     outline: none;
-    background: #333;
+    background: #33333380;
     color: white;
     font-size: 19px;
-    cursor: pointer;
     border-radius: 0 5px 5px 0;
+}
+.typing-area .fa-bold,
+.typing-area .fa-italic,
+.typing-area .fa-smile-o {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    border: none;
+    outline: none;
+    background: #33333380;
+    color: white;
+    cursor: pointer;
+    margin: 0 2px 2px 0;
+    border-radius: 5px;
+}
+.typing-area .fa-smile-o {
+    color: yellow;
 }

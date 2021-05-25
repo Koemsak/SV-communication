@@ -1,6 +1,6 @@
 
 
-// const IP = "192.168.88.29";
+// const IP = "192.168.88.6";
 // const PORT = "5000";
 // const URL_REQUEST = "http://" + IP + ":" + PORT;
 
@@ -19,6 +19,7 @@ function login() {
     axios.post(URL_REQUEST + "/login", getInfo).then((response) => {
         if (response.data) {
             localStorage.setItem("username", username.value);
+            localStorage.setItem("password", password.value);
             window.location.href = "../message.html";
             error_txt.style.display = "none";
         } else {

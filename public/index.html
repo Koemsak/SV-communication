@@ -7,26 +7,34 @@
     <title>Project2</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="js/login.js" defer></script>
+    <script src="../js/index.js" defer></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <div class="wrapper">
-        <div class="form login">
+        <div class="form signup">
             <header>Realtime Chat App</header>
             <form action="#">
-                <div class="error-txt">Incorrect email or password!</div>
-                <div class="field input">
-                    <input type="text" placeholder="Username" id="name">
+                <div class="error-txt">This email already exist!</div>
+                <div class="name-details">
+                    <div class="field input">
+                        <input type="text" placeholder="First Name" id="first" required>
+                    </div>
+                    <div class="field input">
+                        <input type="text" placeholder="Last Name" id="last" required>
+                    </div>
                 </div>
                 <div class="field input">
-                    <input type="password" placeholder="Password" id="password">
+                    <input type="email" placeholder="E-mail" id="mail" required>
+                </div>
+                <div class="field input">
+                    <input type="password" placeholder="Password" id="pass" required>
                 </div>
                 <div class="field input button">
-                    <input type="submit" value="Login" id="login">
+                    <input type="submit" value="Continue to login" id="signup">
                 </div>
             </form>
-            <!-- <div class="link">Not yet signed up? <a href="index.html">Signup now</a></div> -->
+            <div class="link">Already signed up? <a href="login.html">Login now</a></div>
         </div>
     </div>
 </body>
