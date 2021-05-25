@@ -1,6 +1,6 @@
 
 
-// const IP = "192.168.88.6";
+// const IP = "192.168.88.18";
 // const PORT = "5000";
 // const URL_REQUEST = "http://" + IP + ":" + PORT;
 

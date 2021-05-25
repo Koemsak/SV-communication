@@ -1,9 +1,9 @@
 
-// const IP = "192.168.88.6";
-// const PORT = "5000";
-// const URL_REQUEST = "http://" + IP + ":" + PORT;
+const IP = "192.168.88.18";
+const PORT = "5000";
+const URL_REQUEST = "http://" + IP + ":" + PORT;
 
-const URL_REQUEST = "https://sv1communication.herokuapp.com";
+// const URL_REQUEST = "https://sv1communication.herokuapp.com";
 
 // SIGN UP PAGE
 
@@ -37,7 +37,7 @@ btnSignup.addEventListener("click", signup);
 
 
 function loadAuto() {
-    axios.get("/user/auto/login").then((res) => {
+    axios.get(URL_REQUEST + "/user/auto/login").then((res) => {
         let data_user = res.data;
         for (let data of data_user) {
             if (data.firstName === localStorage.getItem("username") && data.password === localStorage.getItem("password")) {
