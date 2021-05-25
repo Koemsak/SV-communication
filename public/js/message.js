@@ -10,12 +10,12 @@ let user_login = localStorage.getItem("username");
 
 // MESSAGE CHAT
 let scrollDown = true;
-function showMessage(response) {
+function showMessage(messages) {
 
     chat_box.firstElementChild.remove();
     let container = document.createElement("div");
     container.className = "container";
-    for (let data of response) {
+    for (let data of messages) {
         let outgoing = document.createElement("div");
         outgoing.className = "chat outgoing";
         let incoming = document.createElement("div");
