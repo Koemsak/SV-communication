@@ -33,7 +33,7 @@ app.post("/login", (req, res) => {
 
  
 // SIGN UP TO ADD NEW USER 
-app.post("/getData", (req, res) => {
+app.post("/getDatas", (req, res) => {
     let newData = req.body;
     let status = false;
     for (let user of data) {
@@ -46,7 +46,7 @@ app.post("/getData", (req, res) => {
         fs.writeFileSync("data.json", JSON.stringify(data));
     }
     res.send(status);
-    console.log(status);
+
 });
 
 

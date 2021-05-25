@@ -67,7 +67,7 @@ function showMessage(response) {
 
 function loadMessage() {
     username.textContent = user_login.toUpperCase();
-    axios.get("/getdata").then((response) => {
+    axios.get(URL_REQUEST + "/getdata").then((response) => {
         showMessage(response.data);
     })
 }

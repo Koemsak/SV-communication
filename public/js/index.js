@@ -21,7 +21,7 @@ function signup() {
             email: mail.value,
             password: pass.value
         }
-        axios.post(URL_REQUEST + "/getData", dataObj).then((response) => {
+        axios.post(URL_REQUEST + "/getDatas", dataObj).then((response) => {
             if (!response.data) {
                 window.location.pathname = "../login.html";
                 err_txt.style.display = "none";
