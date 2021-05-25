@@ -1,9 +1,9 @@
 
-const IP = "192.168.88.18";
-const PORT = "5000";
-const URL_REQUEST = "http://" + IP + ":" + PORT;
+// const IP = "192.168.88.18";
+// const PORT = "5000";
+// const URL_REQUEST = "http://" + IP + ":" + PORT;
 
-// const URL_REQUEST = "https://sv1communication.herokuapp.com";
+const URL_REQUEST = "https://sv1communication.herokuapp.com";
 
 // SIGN UP PAGE
 
