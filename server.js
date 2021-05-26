@@ -9,7 +9,7 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded());
 
-let datas = JSON.parse(fs.readFileSync("data.json"));
+let datas = JSON.parse(fs.readFileSync("datas.json"));
 // GET DATA FROM SIGN UP
 app.post("/signup", (req, res) =>{
     let could_signup = false;
@@ -22,7 +22,7 @@ app.post("/signup", (req, res) =>{
     }
     res.send (could_signup);
     datas.push(singup_infor);
-    fs.writeFileSync("data.json",JSON.stringify(datas));
+    fs.writeFileSync("datas.json",JSON.stringify(datas));
 })
 
 // LOGIN MESSAGE

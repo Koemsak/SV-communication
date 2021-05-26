@@ -1,10 +1,10 @@
 
 
-// const IP = "192.168.88.18";
-// const PORT = 3000;
-// const URL_REQUEST = "http://" + IP + ":" + PORT;
+const IP = "192.168.137.1";
+const PORT = 3000;
+const URL_REQUEST = "http://" + IP + ":" + PORT;
 
-const URL_REQUEST = "https://sv1communication.herokuapp.com";
+// const URL_REQUEST = "https://sv1communication.herokuapp.com";
 // LOGIN
 
 let username = document.querySelector("#name");
@@ -12,20 +12,19 @@ let password = document.querySelector("#password");
 let error_txt = document.querySelector(".error-txt")
 
 function login() {
-    let getInfo = {
-        name: username.value,
+    let input_infor = {
+        user: username.value,
         password: password.value
-    }
-    axios.post(URL_REQUEST + "/login", getInfo).then((response) => {
-        if (response.data) {
+    };
+    axios.post(URL_REQUEST + "/login", input_infor).then( (response) =>{
+        if (response.data){
             localStorage.setItem("username", username.value);
-            localStorage.setItem("password", password.value);
-            window.location.href = "../message.html";
+            window.location.pathname = "message.html";
             error_txt.style.display = "none";
-        } else {
+        }else{
             error_txt.style.display = "block";
         }
-    })
+    });
 }
 let loginBtn = document.querySelector("#login");
 loginBtn.addEventListener("click", login);
