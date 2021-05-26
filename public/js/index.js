@@ -1,6 +1,6 @@
 
 // const IP = "192.168.88.18";
-// const PORT = "5000";
+// const PORT = 3000;
 // const URL_REQUEST = "http://" + IP + ":" + PORT;
 
 const URL_REQUEST = "https://sv1communication.herokuapp.com";
@@ -21,7 +21,7 @@ function signup() {
             email: mail.value,
             password: pass.value
         }
-        axios.post(URL_REQUEST + "/getDatas", dataObj).then((response) => {
+        axios.post(URL_REQUEST + "/getDataSignup", dataObj).then((response) => {
             if (!response.data) {
                 window.location.pathname = "../login.html";
                 err_txt.style.display = "none";

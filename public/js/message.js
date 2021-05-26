@@ -1,7 +1,7 @@
 
 
 // const IP = "192.168.88.18";
-// const PORT = "5000";
+// const PORT = 3000;
 // const URL_REQUEST = "http://" + IP + ":" + PORT;
 
 const URL_REQUEST = "https://sv1communication.herokuapp.com";
@@ -15,6 +15,7 @@ function showMessage(messages) {
     chat_box.firstElementChild.remove();
     let container = document.createElement("div");
     container.className = "container";
+    
     for (let data of messages) {
         let outgoing = document.createElement("div");
         outgoing.className = "chat outgoing";

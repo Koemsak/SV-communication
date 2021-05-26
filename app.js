@@ -1,7 +1,7 @@
 const express = require("express");
 const fs = require("fs");
 const app = express();
-let PORTs = "5000";
+let PORTs = 3000;
 app.listen(process.env.PORT || PORTs);
 
 app.use(express.static("public"));
@@ -33,7 +33,7 @@ app.post("/login", (req, res) => {
 
  
 // SIGN UP TO ADD NEW USER 
-app.post("/getDatas", (req, res) => {
+app.post("/getDataSignup", (req, res) => {
     let newData = req.body;
     let status = false;
     for (let user of data) {
