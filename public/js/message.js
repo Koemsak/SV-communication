@@ -4,6 +4,8 @@
 // const PORT = 3000;
 // const URL_REQUEST = "http://" + IP + ":" + PORT;
 
+const { response } = require("express");
+
 const URL_REQUEST = "https://sv1communication.herokuapp.com";
 
 let user_login = localStorage.getItem("username");
@@ -81,7 +83,7 @@ function send_data() {
             bold: boldClicked,
             italic: italciClicked
         }
-        axios.post(URL_REQUEST + "/add", allInfo);
+        axios.post(URL_REQUEST + "/add", allInfo).then((response));
         input_message.value = "";
     }
 }
@@ -168,7 +170,7 @@ send_btn.addEventListener("click", send_data);
 
 setInterval ( () => {
     loadMessage();
-    100;
+    3000;
     if (scrollDown) {
         chat_box.scrollTop = chat_box.scrollHeight - chat_box.clientHeight;
     }
