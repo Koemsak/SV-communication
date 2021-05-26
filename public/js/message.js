@@ -1,7 +1,6 @@
 
-
-// const IP = "192.168.88.18";
-// const PORT = "5000";
+// const IP = "192.168.88.17";
+// const PORT = 3000;
 // const URL_REQUEST = "http://" + IP + ":" + PORT;
 
 const URL_REQUEST = "https://sv1communication.herokuapp.com";
@@ -82,7 +81,9 @@ function send_data() {
             bold: boldClicked,
             italic: italciClicked
         }
-        axios.post(URL_REQUEST + "/add", allInfo);
+        axios.post(URL_REQUEST + "/add", allInfo).then( (response)=>{
+            showMessage(response.data);
+        });
         input_message.value = "";
     }
 }

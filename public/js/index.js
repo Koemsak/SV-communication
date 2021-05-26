@@ -1,6 +1,6 @@
 
-// const IP = "192.168.88.18";
-// const PORT = "5000";
+// const IP = "192.168.88.17";
+// const PORT = 3000;
 // const URL_REQUEST = "http://" + IP + ":" + PORT;
 
 const URL_REQUEST = "https://sv1communication.herokuapp.com";
