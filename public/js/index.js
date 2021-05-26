@@ -47,4 +47,4 @@ function loadAuto() {
     })
 }
 
-setInterval(loadAuto, 100);
+loadAuto();
