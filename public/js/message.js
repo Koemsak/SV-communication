@@ -16,7 +16,7 @@ function showMessage(messages) {
     let container = document.createElement("div");
     container.className = "container";
     
-    for (let data of messages) {
+    for (let data of messages.data) {
         let outgoing = document.createElement("div");
         outgoing.className = "chat outgoing";
         let incoming = document.createElement("div");
@@ -68,9 +68,7 @@ function showMessage(messages) {
 
 function loadMessage() {
     username.textContent = user_login.toUpperCase();
-    axios.get(URL_REQUEST + "/getdata").then((response) => {
-        showMessage(response.data);
-    })
+    axios.get(URL_REQUEST + "/getdata").then(showMessage);
 }
 
 function send_data() {
