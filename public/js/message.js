@@ -1,10 +1,11 @@
 
 
-// const IP = "192.168.88.18";
-// const PORT = 3000;
-// const URL_REQUEST = "http://" + IP + ":" + PORT;
 
-const URL_REQUEST = "https://sv1communication.herokuapp.com";
+const IP = "192.168.88.25";
+const PORT = 3000;
+const URL_REQUEST = "http://" + IP + ":" + PORT;
+
+// const URL_REQUEST = "https://sv1communication.herokuapp.com";
 
 let user_login = localStorage.getItem("username");
 
@@ -68,7 +69,7 @@ function showMessage(messages) {
 
 function loadMessage() {
     username.textContent = user_login.toUpperCase();
-    axios.get(URL_REQUEST + "/getdata").then(showMessage);
+    axios.get(URL_REQUEST + "/getDataSignup").then(showMessage);
 }
 
 function send_data() {
@@ -81,8 +82,9 @@ function send_data() {
             bold: boldClicked,
             italic: italciClicked
         }
-        axios.post(URL_REQUEST + "/add", allInfo);
+        axios.post(URL_REQUEST + "/add", allInfo).then( (response));
         input_message.value = "";
+        showMessage(response.data);
     }
 }
 
@@ -168,7 +170,7 @@ send_btn.addEventListener("click", send_data);
 
 setInterval ( () => {
     loadMessage();
-    100;
+    3000;
     if (scrollDown) {
         chat_box.scrollTop = chat_box.scrollHeight - chat_box.clientHeight;
     }

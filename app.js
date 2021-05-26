@@ -2,8 +2,7 @@ const express = require("express");
 const fs = require("fs");
 const app = express();
 let PORTs = 3000;
-app.listen(process.env.PORT || PORTs);
-
+app.listen(process.env.PORT || PORTs, () => console.log("Server is running.."));
 app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded());
