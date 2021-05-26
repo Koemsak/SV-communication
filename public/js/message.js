@@ -1,18 +1,17 @@
 
 
 
-const IP = "192.168.88.25";
-const PORT = 3000;
-const URL_REQUEST = "http://" + IP + ":" + PORT;
+// const IP = "192.168.88.18";
+// const PORT = 3000;
+// const URL_REQUEST = "http://" + IP + ":" + PORT;
 
-// const URL_REQUEST = "https://sv1communication.herokuapp.com";
+const URL_REQUEST = "https://sv1communication.herokuapp.com";
 
 let user_login = localStorage.getItem("username");
 
 // MESSAGE CHAT
 let scrollDown = true;
 function showMessage(messages) {
-
     chat_box.firstElementChild.remove();
     let container = document.createElement("div");
     container.className = "container";
@@ -69,7 +68,7 @@ function showMessage(messages) {
 
 function loadMessage() {
     username.textContent = user_login.toUpperCase();
-    axios.get(URL_REQUEST + "/getDataSignup").then(showMessage);
+    axios.get(URL_REQUEST + "/getdata").then(showMessage);
 }
 
 function send_data() {
@@ -82,9 +81,8 @@ function send_data() {
             bold: boldClicked,
             italic: italciClicked
         }
-        axios.post(URL_REQUEST + "/add", allInfo).then( (response));
+        axios.post(URL_REQUEST + "/add", allInfo).then(showMessage);
         input_message.value = "";
-        showMessage(response.data);
     }
 }
 
