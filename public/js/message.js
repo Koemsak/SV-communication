@@ -5,6 +5,8 @@
 // const PORT = 3000;
 // const URL_REQUEST = "http://" + IP + ":" + PORT;
 
+const { response } = require("express");
+
 const URL_REQUEST = "https://sv1communication.herokuapp.com";
 
 let user_login = localStorage.getItem("username");
@@ -84,7 +86,7 @@ function send_data() {
             bold: boldClicked,
             italic: italciClicked
         }
-        axios.post(URL_REQUEST + "/add", allInfo).then(Response);
+        axios.post(URL_REQUEST + "/add", allInfo).then(new_response);
         input_message.value = "";
     }
 }
