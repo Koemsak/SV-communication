@@ -85,10 +85,15 @@ function send_data() {
             bold: boldClicked,
             italic: italciClicked
         }
-        axios.post(URL_REQUEST + "/add", allInfo).then(new_response);
+        axios.post(URL_REQUEST + "/add", allInfo).then((new_response) => {
+            console.log(new_response.data);
+        });
         input_message.value = "";
     }
 }
+
+let send_btn = document.querySelector("#send");
+send_btn.addEventListener("click", send_data);
 
 
 function focus() {
@@ -166,8 +171,7 @@ let input_message = document.querySelector("#txtMess");
 input_message.addEventListener("keyup", focus);
 
 
-let send_btn = document.querySelector("#send");
-send_btn.addEventListener("click", send_data);
+
 
 
 setInterval(loadMessage, 3000);
