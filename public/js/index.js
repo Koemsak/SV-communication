@@ -47,4 +47,4 @@ function loadAuto() {
     })
 }
 
-// loadAuto();
+loadAuto();
