@@ -67,5 +67,5 @@ app.post("/add", (req, res) => {
     }
     message.push(new_data);
     fs.writeFileSync("message.json", JSON.stringify(message));
-    res.send(message);
+    res.send(new_data);
 })

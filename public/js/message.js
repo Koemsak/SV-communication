@@ -69,6 +69,9 @@ function showMessage(messages) {
 function loadMessage() {
     username.textContent = user_login.toUpperCase();
     axios.get(URL_REQUEST + "/getdata").then(showMessage);
+    if (scrollDown) {
+        chat_box.scrollTop = chat_box.scrollHeight - chat_box.clientHeight;
+    }
 }
 
 function send_data() {
@@ -81,7 +84,7 @@ function send_data() {
             bold: boldClicked,
             italic: italciClicked
         }
-        axios.post(URL_REQUEST + "/add", allInfo).then(showMessage);
+        axios.post(URL_REQUEST + "/add", allInfo).then(Response);
         input_message.value = "";
     }
 }
@@ -166,13 +169,7 @@ let send_btn = document.querySelector("#send");
 send_btn.addEventListener("click", send_data);
 
 
-setInterval ( () => {
-    loadMessage();
-    3000;
-    if (scrollDown) {
-        chat_box.scrollTop = chat_box.scrollHeight - chat_box.clientHeight;
-    }
-})
+setInterval(loadMessage, 3000);
 
 chat_box.addEventListener("scroll", () => {
     scrollDown = false;

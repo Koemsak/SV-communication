@@ -41,7 +41,7 @@ function loadAuto() {
         let data_user = res.data;
         for (let data of data_user) {
             if (data.firstName === localStorage.getItem("username") && data.password === localStorage.getItem("password")) {
-                window.location.pathname = "../message.html";
+                window.location.pathname = "message.html";
             }
         }
     })
