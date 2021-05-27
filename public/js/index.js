@@ -11,7 +11,7 @@ let err_txt = document.querySelector(".error-txt");
 let first = document.querySelector("#firstName");
 let last = document.querySelector("#lastName");
 let mail = document.querySelector("#mail");
-let pass = document.querySelector("#pass");
+let pass = document.querySelector("#password");
 
 function signup() {
     if (first.value !== "" && last.value !== "" && mail.value !== "" && pass.value !== "") {
