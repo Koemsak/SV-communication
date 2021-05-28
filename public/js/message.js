@@ -1,7 +1,7 @@
 
 
 
-// const IP = "192.168.137.22";
+// const IP = "192.168.88.24";
 // const PORT = 3000;
 // const URL_REQUEST = "http://" + IP + ":" + PORT;
 
@@ -34,12 +34,12 @@ function showMessage(messages) {
             outgoing.appendChild(h5);
             container.appendChild(outgoing);
             
-            if (data.bold === false) {
+            if (data.bold === true) {
                 p.style.fontWeight = "bold";
             } else {
                 p.style.fontWeight = "normal";
             }
-            if (data.italic === false) {
+            if (data.italic === true) {
                 p.style.fontStyle = "italic";
             } else {
                 p.style.fontStyle = "normal";
@@ -52,12 +52,12 @@ function showMessage(messages) {
             incoming.appendChild(details);
             container.appendChild(incoming);
 
-            if (data.bold === false) {
+            if (data.bold === true) {
                 p.style.fontWeight = "bold";
             } else {
                 p.style.fontWeight = "normal";
             }
-            if (data.italic === false) {
+            if (data.italic === true) {
                 p.style.fontStyle = "italic";
             } else {
                 p.style.fontStyle = "normal";
@@ -90,6 +90,8 @@ function send_data() {
         });
         input_message.value = "";
     }
+    send_btn.style.background = "#33333380";
+    send_btn.style.cursor = "auto";
 }
 
 let send_btn = document.querySelector("#send");
@@ -106,9 +108,12 @@ function focus() {
     }
 }
 
+let input_message = document.querySelector("#txtMess");
+input_message.addEventListener("keyup", focus);
+
 
 // BOLD MESSAGE IN CHAT
-let boldClicked = true;
+let boldClicked = false;
 let boldNumber = 0;
 function boldTxt () {
     boldNumber += 1;
@@ -117,9 +122,9 @@ function boldTxt () {
     if (boldNumber % 2 === 0) {
         btnBold.style.background = "#33333380";
         input_message.style.fontWeight = "normal";
-        boldClicked = true;
-    } else {
         boldClicked = false;
+    } else {
+        boldClicked = true;
     }
 }
 
@@ -128,7 +133,7 @@ btnBold.addEventListener("click", boldTxt);
 
 
 // ITALIC MESSAGE IN CHAT
-let italciClicked = true;
+let italciClicked = false;
 let italicNumber = 0;
 function italicTxt () {
     italicNumber += 1;
@@ -137,9 +142,9 @@ function italicTxt () {
     if (italicNumber % 2 === 0) {
         input_message.style.fontStyle = "normal";
         btnItalic.style.background = "#33333380";
-        italciClicked = true;
-    } else {
         italciClicked = false;
+    } else {
+        italciClicked = true;
     }
 }
 
@@ -148,33 +153,29 @@ btnItalic.addEventListener("click", italicTxt);
 
 
 // EMOJI BTN   
-let emojiClicked = true;
-function emojiBtn () {
-    if (emojiClicked) {
-        btnEmoji.style.background = "#333";
-        emojiClicked = false;
-    } else {
-        btnEmoji.style.background = "#33333380";
-        emojiClicked = true;
-    }
-}
 
 let btnEmoji = document.querySelector(".emoji");
-btnEmoji.addEventListener("click", emojiBtn);
+const picker = new EmojiButton();
+document.addEventListener("DOMContentLoaded", () => {
+    picker.on("emoji", emoji => {
+        input_message.value += emoji;
+    });
+    btnEmoji.addEventListener("click", () => {
+        picker.togglePicker(btnEmoji);
+        send_btn.style.background = "#333";
+        send_btn.style.cursor = "pointer";
+    });
+});
 
 // THE INFORMATION OF MESSAGE HTML
 
 let username = document.querySelector(".details span");
 let chat_box = document.querySelector(".chat-box");
 
-let input_message = document.querySelector("#txtMess");
-input_message.addEventListener("keyup", focus);
 
 
 
-
-
-setInterval(loadMessage, 3000);
+setInterval(loadMessage, 1000);
 
 chat_box.addEventListener("scroll", () => {
     scrollDown = false;

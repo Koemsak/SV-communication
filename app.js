@@ -13,9 +13,9 @@ let data = JSON.parse(fs.readFileSync("data.json"));
 
 
 // GET DATA TO LOAD DATA AUTO
-app.get("/user/auto/login", (req, res) => {
-    res.send(data);
-})
+// app.get("/user/auto/login", (req, res) => {
+//     res.send(data);
+// })
 
 
 // LOGIN MESSAGE

@@ -1,12 +1,12 @@
 
-// const IP = "192.168.137.22";
+// const IP = "192.168.88.24";
 // const PORT = 3000;
 // const URL_REQUEST = "http://" + IP + ":" + PORT;
 
 const URL_REQUEST = "https://sv1communication.herokuapp.com";
 
 // SIGN UP PAGE
-
+let setauto = true;
 let err_txt = document.querySelector(".error-txt");
 let first = document.querySelector("#firstName");
 let last = document.querySelector("#lastName");
@@ -29,6 +29,7 @@ function signup() {
                 err_txt.style.display = "block";
             }
         })
+        localStorage.setItem("auto", )
     }
 }
 
@@ -36,15 +37,15 @@ let btnSignup = document.querySelector("#signup");
 btnSignup.addEventListener("click", signup);
 
 
-function loadAuto() {
-    axios.get(URL_REQUEST + "/user/auto/login").then((res) => {
-        let data_user = res.data;
-        for (let data of data_user) {
-            if (data.firstName === localStorage.getItem("username") && data.password === localStorage.getItem("password")) {
-                window.location.pathname = "message.html";
-            }
-        }
-    })
-}
+// function loadAuto() {
+//     axios.get(URL_REQUEST + "/user/auto/login").then((res) => {
+//         let data_user = res.data;
+//         for (let data of data_user) {
+//             if (data.firstName === localStorage.getItem("username") && data.password === localStorage.getItem("password")) {
+//                 window.location.pathname = "message.html";
+//             }
+//         }
+//     })
+// }
 
-loadAuto();
+// loadAuto();
