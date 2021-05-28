@@ -27,7 +27,7 @@ function showMessage(messages) {
         let p = document.createElement("p");
         let h5 = document.createElement("h5");
         if (data.name === user_login) {
-            p.textContent = data.text;
+            p.textContent = emojiConverted(data.text);
             h5.textContent = data.name.toUpperCase();
             details.appendChild(p); 
             outgoing.appendChild(details);
@@ -45,7 +45,7 @@ function showMessage(messages) {
                 p.style.fontStyle = "normal";
             }
         } else {
-            p.textContent = data.text;
+            p.textContent = emojiConverted(data.text);
             h5.textContent = data.name.toUpperCase();
             details.appendChild(p);
             incoming.appendChild(h5);
@@ -166,6 +166,32 @@ document.addEventListener("DOMContentLoaded", () => {
         send_btn.style.cursor = "pointer";
     });
 });
+
+// EMOJI CONVERT
+
+let emojiList = {'<3': '❤️', ':)': '🙂',':>': '👽', ':(': '😟', ':o': '😲', ':D': '😄', '><': '😆',
+                '3:)': '😈', ':`': '😢', '-_-': '😑', ':p': '😝', '<(")': '🐁', '8)': '😎', 'o:)': '😇',
+                '>:o': '😡', ':*': '😗'};
+
+function emojiConverted(emoji){
+    let wordSplit = emoji.split(" ");
+    let newText = '';
+
+    for (let word of wordSplit){
+        let foundEmoji = false;
+        for (let emoji in emojiList){
+            if (word === emoji){
+                newText += emojiList[emoji];
+                foundEmoji = true;
+            };
+        };
+        if (!foundEmoji){
+            newText += word;
+        };
+        newText += ' ';
+    };
+    return newText;
+};
 
 // THE INFORMATION OF MESSAGE HTML
 
