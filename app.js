@@ -11,13 +11,6 @@ app.use(express.urlencoded());
 
 let data = JSON.parse(fs.readFileSync("data.json"));
 
-
-// GET DATA TO LOAD DATA AUTO
-// app.get("/user/auto/login", (req, res) => {
-//     res.send(data);
-// })
-
-
 // LOGIN MESSAGE
 app.post("/login", (req, res) => {
     let info = req.body;
@@ -29,7 +22,6 @@ app.post("/login", (req, res) => {
     }
     res.send(invalid);
 })
-
  
 // SIGN UP TO ADD NEW USER 
 app.post("/getDataSignup", (req, res) => {

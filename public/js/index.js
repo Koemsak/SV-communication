@@ -1,5 +1,5 @@
 
-// const IP = "192.168.88.24";
+// const IP = "192.168.88.23";
 // const PORT = 3000;
 // const URL_REQUEST = "http://" + IP + ":" + PORT;
 
@@ -37,15 +37,3 @@ let btnSignup = document.querySelector("#signup");
 btnSignup.addEventListener("click", signup);
 
 
-// function loadAuto() {
-//     axios.get(URL_REQUEST + "/user/auto/login").then((res) => {
-//         let data_user = res.data;
-//         for (let data of data_user) {
-//             if (data.firstName === localStorage.getItem("username") && data.password === localStorage.getItem("password")) {
-//                 window.location.pathname = "message.html";
-//             }
-//         }
-//     })
-// }
-
-// loadAuto();

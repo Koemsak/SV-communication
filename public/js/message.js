@@ -1,7 +1,5 @@
 
-
-
-// const IP = "192.168.88.24";
+// const IP = "192.168.88.23";
 // const PORT = 3000;
 // const URL_REQUEST = "http://" + IP + ":" + PORT;
 
@@ -169,36 +167,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // EMOJI CONVERT
 
-let emojiList = {'<3': '❤️', ':)': '🙂',':>': '👽', ':(': '😟', ':o': '😲', ':D': '😄', '><': '😆',
+let emojiList = {"<3": '❤️', ':)': '🙂',':>': '👽', ':(': '😟', ':o': '😲', ':D': '😄', '><': '😆',
                 '3:)': '😈', ':`': '😢', '-_-': '😑', ':p': '😝', '<(")': '🐁', '8)': '😎', 'o:)': '😇',
                 '>:o': '😡', ':*': '😗'};
 
 function emojiConverted(emoji){
     let wordSplit = emoji.split(" ");
     let newText = '';
-
-    for (let word of wordSplit){
-        let foundEmoji = false;
-        for (let emoji in emojiList){
-            if (word === emoji){
-                newText += emojiList[emoji];
-                foundEmoji = true;
-            };
-        };
-        if (!foundEmoji){
-            newText += word;
-        };
-        newText += ' ';
-    };
-    return newText;
+    let index = 0;
+    for (word  of wordSplit){
+        if (emojiList[word] !== undefined){
+            newText += emojiList[word]+" ";
+        }else{
+            newText += word+" ";
+        }
+        index++;
+    }return newText;
 };
 
 // THE INFORMATION OF MESSAGE HTML
 
 let username = document.querySelector(".details span");
 let chat_box = document.querySelector(".chat-box");
-
-
 
 
 setInterval(loadMessage, 1000);
