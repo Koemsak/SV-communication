@@ -174,14 +174,12 @@ let emojiList = {"<3": '❤️', ':)': '🙂',':>': '👽', ':(': '😟', ':o': 
 function emojiConverted(emoji){
     let wordSplit = emoji.split(" ");
     let newText = '';
-    let index = 0;
     for (word  of wordSplit){
         if (emojiList[word] !== undefined){
             newText += emojiList[word]+" ";
         }else{
             newText += word+" ";
         }
-        index++;
     }return newText;
 };
 
